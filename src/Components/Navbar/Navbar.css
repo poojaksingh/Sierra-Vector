@@ -1,0 +1,26 @@
+.search-bar {
+  height: 28px;
+  background-color: #e8e8e8;
+  border-radius: 3px 0px 0px 3px;
+  border: none;
+}
+.search-bar:focus {
+  border-color: #e8e8e8;
+  border: none;
+  background-color: #e8e8e8;
+}
+.search_Icon {
+  border-radius: 0px 3px 3px 0px;
+  border: none;
+}
+.search_Icon_inner {
+  height: 28px;
+  background-color: #e8e8e8;
+  border: none;
+}
+.title {
+  color: rgb(65, 158, 245);
+}
+.Titlleroy {
+  padding-top: 10px;
+}
