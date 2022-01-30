@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
+import Logo from "../../assets/profile.png";
 
 function Navbar() {
   return (
@@ -14,7 +15,7 @@ function Navbar() {
         <div className="row py-3 px-5">
           <div className="col-3">
             <b>
-              <h5>
+              <h5 className="text-dark">
                 Sierra <b className="title">Vector</b>
               </h5>
             </b>
@@ -40,11 +41,12 @@ function Navbar() {
           </div>
           <div className="col-3">
             <div className="d-flex flex-row-reverse">
-              <small className=" Titlleroy ml-5 ">JUSTIN ROY</small>
+              <small className=" Titlleroy ml-5 text-dark">JUSTIN ROY</small>
               <div className="image-round">
                 <img
                   class="rounded-circle mr-5"
-                  src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-3--v1.png"
+                  alt="dp"
+                  src={Logo}
                   height={36}
                   width={36}
                 />

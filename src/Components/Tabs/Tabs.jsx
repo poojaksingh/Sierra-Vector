@@ -5,18 +5,9 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CustomTable from "../CustomTable/CustomTable";
-import { makeStyles } from "@material-ui/core/styles";
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
-  // const useStyles = makeStyles((theme) => ({
-  //   tab: {
-  //     "& .MuiBox-root": {
-  //       padding: "0px",
-  //     },
-  //   },
-  // }));
-
   return (
     <div
       role="tabpanel"
@@ -26,7 +17,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -55,32 +46,29 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-        </Tabs>
+    <div className="border shadow" style={{ borderRadius: "10px" }}>
+      <Box sx={{ width: "100%" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+          >
+            <Tab label="Item One" {...a11yProps(0)} />
+            <Tab label="Item Two" {...a11yProps(1)} />
+            <Tab label="Item Three" {...a11yProps(2)} />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          <CustomTable />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <CustomTable />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          component 3
+        </TabPanel>
       </Box>
-      <TabPanel
-        value={value}
-        index={0}
-        sx={{ padding: "0px" }}
-        // className={useStyles.tab}
-      >
-        <CustomTable />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <CustomTable />
-      </TabPanel>
-      <TabPanel value={value} index={2} sx={{ p: "0px" }}>
-        component 3
-      </TabPanel>
-    </Box>
+    </div>
   );
 }
