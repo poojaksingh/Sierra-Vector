@@ -1,8 +1,13 @@
 import AllProducts from "./Pages/AllProducts";
+import ReactRouter from "./Router/ReactRouter";
 import "./App.css";
 
 function App() {
-  return <AllProducts />;
+  return (
+    <>
+      <ReactRouter />
+    </>
+  );
 }
 
 export default App;

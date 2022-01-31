@@ -6,7 +6,7 @@ import Cardblue from "../../Components/Cardblue/Cardblue";
 function AllProductsContainer() {
   const TabData = [
     {
-      tabName: "Item One",
+      tabName: "All",
       tabComponenet: CustomTable,
       tabPadding: 0,
       tabIndex: 0,
@@ -17,9 +17,23 @@ function AllProductsContainer() {
       },
     },
     {
-      tabName: "Pooja",
+      tabName: "Active",
       tabComponenet: Cardblue,
       tabPadding: 5,
+      tabIndex: 1,
+      componentData: {},
+    },
+    {
+      tabName: "Draft",
+      tabComponenet: Cardblue,
+      tabPadding: 0,
+      tabIndex: 1,
+      componentData: {},
+    },
+    {
+      tabName: "Archive",
+      tabComponenet: Cardblue,
+      tabPadding: 0,
       tabIndex: 1,
       componentData: {},
     },

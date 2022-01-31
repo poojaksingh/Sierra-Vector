@@ -55,6 +55,11 @@ export default function BasicTabs({ TabData }) {
           >
             {TabData.map((tab) => (
               <Tab
+                sx={{
+                  fontWeight: "bold",
+                  color: "black",
+                  textTransform: "none",
+                }}
                 key={tab.tabIndex}
                 label={tab.tabName}
                 {...a11yProps(tab.tabIndex)}
