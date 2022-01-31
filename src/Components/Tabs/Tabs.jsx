@@ -4,10 +4,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import CustomTable from "../CustomTable/CustomTable";
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index, tabPadding, ...other } = props;
   return (
     <div
       role="tabpanel"
@@ -17,7 +16,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box>
+        <Box sx={{ p: tabPadding }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -38,7 +37,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({ TabData }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -54,20 +53,25 @@ export default function BasicTabs() {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="Item One" {...a11yProps(0)} />
-            <Tab label="Item Two" {...a11yProps(1)} />
-            <Tab label="Item Three" {...a11yProps(2)} />
+            {TabData.map((tab) => (
+              <Tab
+                key={tab.tabIndex}
+                label={tab.tabName}
+                {...a11yProps(tab.tabIndex)}
+              />
+            ))}
           </Tabs>
         </Box>
-        <TabPanel value={value} index={0}>
-          <CustomTable />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <CustomTable />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          component 3
-        </TabPanel>
+        {TabData.map(({ tabIndex, tabPadding, tabComponenet: Component }) => (
+          <TabPanel
+            key={tabIndex}
+            value={value}
+            index={tabIndex}
+            tabPadding={tabPadding}
+          >
+            <Component />
+          </TabPanel>
+        ))}
       </Box>
     </div>
   );
