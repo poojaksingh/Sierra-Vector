@@ -1,29 +1,29 @@
 import React from "react";
 import { useState } from "react";
-
+import { useNavigate, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-
-import ListItem from "@mui/material/ListItem";
+import ListItem, { listItemClasses } from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-
 import MailIcon from "@mui/icons-material/Mail";
 import Collapse from "@mui/material/Collapse";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-
 import PersonIcon from "@mui/icons-material/Person";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 
-const drawerWidth = 240;
+const drawerWidth = 220;
+
 function Sidebar() {
-  const [open, setOpen] = useState(true);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
   return (
     <div>
       <Drawer
@@ -39,16 +39,29 @@ function Sidebar() {
       >
         <Toolbar />
         <Box sx={{ overflow: "auto" }}>
-          <List>
+          <List
+            sx={{
+              [`& .active, & .${listItemClasses.root}:hover`]: {
+                bgcolor: "rgba(33, 150, 243, 0.2)",
+              },
+              px: 2,
+            }}
+          >
             <ListItem
               button
               key={"Dashboard"}
+              onClick={() => navigate("orders")}
               sx={{
-                color: "blue",
-                fontSize: "small",
+                borderRadius: 2,
+                bgcolor: pathname === "/" ? "#2196F3" : "",
+                color: pathname === "/" ? "#fff" : "",
               }}
             >
-              <ListItemIcon>
+              <ListItemIcon
+                sx={{
+                  color: pathname === "/" ? "#fff" : "",
+                }}
+              >
                 <DashboardIcon />
               </ListItemIcon>
               <ListItemText primary={"Dashboard"} />
