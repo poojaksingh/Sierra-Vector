@@ -24,6 +24,7 @@ import Checkbox from "@mui/material/Checkbox";
 import { visuallyHidden } from "@mui/utils";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
+import Grid from "@mui/material/Grid";
 
 function CustomTable() {
   const [order, setOrder] = useState("asc");
@@ -246,10 +247,10 @@ function CustomTable() {
           pr: { xs: 1, sm: 1 },
         }}
       >
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-8">
-              <div class="input-group">
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={6} lg={8} xl={8}>
+            <Paper sx={{ m: { xs: 1, md: 0 } }}>
+              <div className="input-group">
                 <input
                   type="text"
                   class="form-control shadow-none search-bar"
@@ -266,113 +267,130 @@ function CustomTable() {
                   </span>
                 </div>
               </div>
-            </div>
-            <div className="col-2 m-0 ">
-              <div class="dropdown">
-                <button
-                  class="btn bg-white  border py-0 px-3"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <div className="d-flex flex-nowrap">
-                    <div>
-                      <HeightIcon
-                        fontSize="small"
-                        style={{ fontSize: "16px", fontWeight: "bolder" }}
-                      />
-                    </div>
-                    <div className="px-1">
-                      <small>
-                        <b>Sort</b>
-                      </small>
-                    </div>
-                    <div>
-                      <KeyboardArrowDownIcon
-                        fontSize="small"
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "bolder",
-                          color: "black",
-                        }}
-                      />
-                    </div>
+            </Paper>
+          </Grid>
+          <Grid item xs={6} sm={6} md={3} lg={2} xl={2}>
+            <div class="dropdown">
+              <button
+                class="btn bg-white  border py-0 px-3"
+                type="button"
+                id="dropdownMenu2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div className="d-flex flex-nowrap">
+                  <div>
+                    <HeightIcon
+                      fontSize="small"
+                      style={{ fontSize: "16px", fontWeight: "bolder" }}
+                    />
                   </div>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li>
-                    <button class="dropdown-item" type="button">
-                      Action
-                    </button>
-                  </li>
-                  <li>
-                    <button class="dropdown-item" type="button">
-                      Another action
-                    </button>
-                  </li>
-                  <li>
-                    <button class="dropdown-item" type="button">
-                      Something else here
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-2 m-0 ">
-              <div class="dropdown">
-                <button
-                  class="btn bg-white  border py-0 px-3"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <div className="d-flex flex-nowrap">
-                    <div>
-                      <FilterAltIcon
-                        fontSize="small"
-                        style={{ fontSize: "16px", fontWeight: "bolder" }}
-                      />
-                    </div>
-                    <div className="px-1">
-                      <small>
-                        <b>Filter</b>
-                      </small>
-                    </div>
-                    <div>
-                      <KeyboardArrowDownIcon
-                        fontSize="small"
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "bolder",
-                          color: "black",
-                        }}
-                      />
-                    </div>
+                  <div className="px-1">
+                    <small>
+                      <b>Sort</b>
+                    </small>
                   </div>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li>
-                    <button class="dropdown-item" type="button">
-                      Action
-                    </button>
-                  </li>
-                  <li>
-                    <button class="dropdown-item" type="button">
-                      Another action
-                    </button>
-                  </li>
-                  <li>
-                    <button class="dropdown-item" type="button">
-                      Something else here
-                    </button>
-                  </li>
-                </ul>
-              </div>
+                  <div>
+                    <KeyboardArrowDownIcon
+                      fontSize="small"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "bolder",
+                        color: "black",
+                      }}
+                    />
+                  </div>
+                </div>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                  <button class="dropdown-item" type="button">
+                    Action
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button">
+                    Another action
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button">
+                    Something else here
+                  </button>
+                </li>
+              </ul>
             </div>
+          </Grid>
+          <Grid item xs={6} sm={6} md={3} lg={2} xl={2}>
+            <div class="dropdown">
+              <button
+                class="btn bg-white  border py-0 px-3"
+                type="button"
+                id="dropdownMenu2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div className="d-flex flex-nowrap">
+                  <div>
+                    <FilterAltIcon
+                      fontSize="small"
+                      style={{ fontSize: "16px", fontWeight: "bolder" }}
+                    />
+                  </div>
+                  <div className="px-1">
+                    <small>
+                      <b>Filter</b>
+                    </small>
+                  </div>
+                  <div>
+                    <KeyboardArrowDownIcon
+                      fontSize="small"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "bolder",
+                        color: "black",
+                      }}
+                    />
+                  </div>
+                </div>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                  <button class="dropdown-item" type="button">
+                    Action
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button">
+                    Another action
+                  </button>
+                </li>
+                <li>
+                  <button class="dropdown-item" type="button">
+                    Something else here
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </Grid>
+        </Grid>
+        {/* <div class="input-group">
+          <input
+            type="text"
+            class="form-control shadow-none search-bar"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append  search_Icon">
+            <span
+              class="input-group-text search-bar search_Icon"
+              id="basic-addon2"
+            >
+              <SearchIcon />
+            </span>
           </div>
-        </div>
+        </div> */}
       </Toolbar>
     );
   };
