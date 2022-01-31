@@ -1,4 +1,4 @@
-import AllProductsContainer from "../container/All Products/AllProductsContainer";
+import AllProductsContainer from "../Container/All Products/AllProductsContainer";
 
 function AllProducts() {
   return <AllProductsContainer />;

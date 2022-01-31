@@ -1,4 +1,4 @@
-import AllProducts from "./pages/AllProducts";
+import AllProducts from "./Pages/AllProducts";
 import "./App.css";
 
 function App() {

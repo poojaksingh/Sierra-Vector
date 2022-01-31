@@ -40,17 +40,6 @@ function CustomTable() {
   const ITEM_HEIGHT = 48;
   const ITEM_PADDING_TOP = 8;
 
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((res) => {
-        setTableData(res.data);
-        console.log("Result:", tableData);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
   const MenuProps = {
     PaperProps: {
       style: {
@@ -255,13 +244,6 @@ function CustomTable() {
         sx={{
           pl: { sm: 2 },
           pr: { xs: 1, sm: 1 },
-          ...(numSelected > 0 && {
-            bgcolor: (theme) =>
-              alpha(
-                theme.palette.primary.main,
-                theme.palette.action.activatedOpacity
-              ),
-          }),
         }}
       >
         <div className="container-fluid">
@@ -440,10 +422,10 @@ function CustomTable() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
   return (
-    <Box sx={{ width: "100%", border: "none" }}>
-      <Paper sx={{ width: "100%", border: "none" }}>
+    <Box sx={{ width: "100%" }}>
+      <Paper sx={{ width: "100%" }}>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <TableContainer>
+        <TableContainer sx={{}}>
           <Table
             sx={{ minWidth: 500 }}
             aria-labelledby="tableTitle"
@@ -468,6 +450,9 @@ function CustomTable() {
 
                   return (
                     <TableRow
+                      sx={{
+                        bgcolor: "white",
+                      }}
                       hover
                       onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
@@ -478,7 +463,7 @@ function CustomTable() {
                     >
                       <TableCell padding="checkbox">
                         <Checkbox
-                          color="secondary"
+                          color="primary"
                           checked={isItemSelected}
                           inputProps={{
                             "aria-labelledby": labelId,
