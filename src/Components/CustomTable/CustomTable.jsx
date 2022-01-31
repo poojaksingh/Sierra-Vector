@@ -248,8 +248,8 @@ function CustomTable() {
         }}
       >
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={6} lg={8} xl={8}>
-            <Paper sx={{ m: { xs: 1, md: 0 } }}>
+          <Grid item xs={6} lg={8}>
+            <Paper>
               <div className="input-group">
                 <input
                   type="text"
@@ -269,7 +269,7 @@ function CustomTable() {
               </div>
             </Paper>
           </Grid>
-          <Grid item xs={6} sm={6} md={3} lg={2} xl={2}>
+          <Grid item xs={3} lg={2}>
             <div class="dropdown">
               <button
                 class="btn bg-white  border py-0 px-3"
@@ -321,7 +321,7 @@ function CustomTable() {
               </ul>
             </div>
           </Grid>
-          <Grid item xs={6} sm={6} md={3} lg={2} xl={2}>
+          <Grid item xs={3} lg={2}>
             <div class="dropdown">
               <button
                 class="btn bg-white  border py-0 px-3"
@@ -374,23 +374,6 @@ function CustomTable() {
             </div>
           </Grid>
         </Grid>
-        {/* <div class="input-group">
-          <input
-            type="text"
-            class="form-control shadow-none search-bar"
-            placeholder="Search"
-            aria-label="Search"
-            aria-describedby="basic-addon2"
-          />
-          <div class="input-group-append  search_Icon">
-            <span
-              class="input-group-text search-bar search_Icon"
-              id="basic-addon2"
-            >
-              <SearchIcon />
-            </span>
-          </div>
-        </div> */}
       </Toolbar>
     );
   };
