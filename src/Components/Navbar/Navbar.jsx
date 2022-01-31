@@ -21,17 +21,17 @@ function Navbar() {
             </b>
           </div>
           <div className="col-6 px-5">
-            <div class="input-group">
+            <div className="input-group">
               <input
                 type="text"
-                class="form-control shadow-none search-bar"
+                className="form-control shadow-none search-bar"
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedby="basic-addon2"
               />
-              <div class="input-group-append  search_Icon">
+              <div className="input-group-append  search_Icon">
                 <span
-                  class="input-group-text search-bar search_Icon"
+                  className="input-group-text search-bar search_Icon"
                   id="basic-addon2"
                 >
                   <SearchIcon />
@@ -44,7 +44,7 @@ function Navbar() {
               <small className=" Titlleroy ml-5 text-dark">JUSTIN ROY</small>
               <div className="image-round">
                 <img
-                  class="rounded-circle mr-5"
+                  className="rounded-circle mr-5"
                   alt="dp"
                   src={Logo}
                   height={36}

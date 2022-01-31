@@ -4,7 +4,7 @@ function Cardblue() {
   return (
     <div>
       <div
-        class="card mb-5 shadow "
+        className="card mb-5 shadow "
         style={{
           width: "300px",
           padding: "0px",
@@ -14,9 +14,9 @@ function Cardblue() {
           border: "none",
         }}
       >
-        <div class="card-body">
+        <div className="card-body">
           <div className="px-3 pb-2"> New Orders</div>
-          <div class="d-flex flex-nowrap">
+          <div className="d-flex flex-nowrap">
             <div className="px-3 border-end border-2 border-primary">
               <b
                 style={{
