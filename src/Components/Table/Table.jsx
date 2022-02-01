@@ -201,58 +201,110 @@ const EnhancedTableToolbar = () => {
           </Paper>
         </Grid>
         <Grid item xs={3} lg={2}>
-          <div className="dropdown">
-            <button
-              className="btn bg-white  border py-0 px-3"
-              type="button"
-              id="dropdownMenu2"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <div className="d-flex flex-nowrap">
-                <div>
-                  <HeightIcon
-                    fontSize="small"
-                    style={{ fontSize: "16px", fontWeight: "bolder" }}
-                  />
+          <div className="d-flex flex-row px-2">
+            <div className="dropdown px-2">
+              <button
+                className="btn bg-white  border py-0 px-3"
+                type="button"
+                id="dropdownMenu2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div className="d-flex flex-nowrap">
+                  <div>
+                    <HeightIcon
+                      fontSize="small"
+                      style={{ fontSize: "16px", fontWeight: "bolder" }}
+                    />
+                  </div>
+                  <div className="px-1">
+                    <small>
+                      <b>Sort</b>
+                    </small>
+                  </div>
+                  <div>
+                    <KeyboardArrowDownIcon
+                      fontSize="small"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "bolder",
+                        color: "black",
+                      }}
+                    />
+                  </div>
                 </div>
-                <div className="px-1">
-                  <small>
-                    <b>Sort</b>
-                  </small>
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                  <button className="dropdown-item" type="button">
+                    Action
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item" type="button">
+                    Another action
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item" type="button">
+                    Something else here
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div className="dropdown px-2">
+              <button
+                className="btn bg-white  border py-0 px-3"
+                type="button"
+                id="dropdownMenu2"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div className="d-flex flex-nowrap">
+                  <div>
+                    <FilterAltIcon
+                      fontSize="small"
+                      style={{ fontSize: "16px", fontWeight: "bolder" }}
+                    />
+                  </div>
+                  <div className="px-1">
+                    <small>
+                      <b>Filter</b>
+                    </small>
+                  </div>
+                  <div>
+                    <KeyboardArrowDownIcon
+                      fontSize="small"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "bolder",
+                        color: "black",
+                      }}
+                    />
+                  </div>
                 </div>
-                <div>
-                  <KeyboardArrowDownIcon
-                    fontSize="small"
-                    style={{
-                      fontSize: "16px",
-                      fontWeight: "bolder",
-                      color: "black",
-                    }}
-                  />
-                </div>
-              </div>
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li>
-                <button className="dropdown-item" type="button">
-                  Action
-                </button>
-              </li>
-              <li>
-                <button className="dropdown-item" type="button">
-                  Another action
-                </button>
-              </li>
-              <li>
-                <button className="dropdown-item" type="button">
-                  Something else here
-                </button>
-              </li>
-            </ul>
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                  <button className="dropdown-item" type="button">
+                    Action
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item" type="button">
+                    Another action
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item" type="button">
+                    Something else here
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </Grid>
-        <Grid item xs={3} lg={2}>
+        {/* <Grid item xs={3} lg={2}>
           <div className="dropdown">
             <button
               className="btn bg-white  border py-0 px-3"
@@ -303,7 +355,7 @@ const EnhancedTableToolbar = () => {
               </li>
             </ul>
           </div>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Toolbar>
   );
