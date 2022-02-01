@@ -40,9 +40,8 @@ function Navbar() {
             </div>
           </div>
           <div className="col-3">
-            <div className="d-flex flex-row-reverse">
-              <small className=" Titlleroy ml-5 text-dark">JUSTIN ROY</small>
-              <div className="image-round">
+            <div className="d-flex justify-content-end">
+              <div className="px-3">
                 <img
                   className="rounded-circle mr-5"
                   alt="dp"
@@ -51,6 +50,7 @@ function Navbar() {
                   width={36}
                 />
               </div>
+              <small className=" Titlleroy  text-dark">JUSTIN ROY</small>
             </div>
           </div>
         </div>
