@@ -53,8 +53,8 @@ function Sidebar() {
               onClick={() => navigate("orders")}
               sx={{
                 borderRadius: 2,
-                bgcolor: pathname === "/" ? "#2196F3" : "",
-                color: pathname === "/" ? "#fff" : "",
+                bgcolor: pathname === "/orders" ? "#2196F3" : "",
+                color: pathname === "/orders" ? "#fff" : "",
               }}
             >
               <ListItemIcon
@@ -75,16 +75,46 @@ function Sidebar() {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                <ListItem button key={"All Products"} sx={{ pl: 4 }}>
+                <ListItem
+                  button
+                  key={"All Products"}
+                  onClick={() => navigate("allProducts")}
+                  sx={{
+                    pl: 4,
+                    borderRadius: 2,
+                    bgcolor: pathname === "/" ? "#2196F3" : "",
+                    color: pathname === "/" ? "#fff" : "",
+                  }}
+                >
                   <ListItemText primary="All Products" />
                 </ListItem>
-                <ListItem button key={"Categories"} sx={{ pl: 4 }}>
+                <ListItem
+                  button
+                  key={"Categories"}
+                  onClick={() => navigate("categories")}
+                  sx={{
+                    pl: 4,
+                    borderRadius: 2,
+                    bgcolor: pathname === "/categories" ? "#2196F3" : "",
+                    color: pathname === "/categories" ? "#fff" : "",
+                  }}
+                >
                   <ListItemIcon>
                     <MailIcon />
                   </ListItemIcon>
                   <ListItemText primary="categories" />
                 </ListItem>
-                <ListItem button key={"Inventory"} sx={{ pl: 4 }}>
+                <ListItem
+                  button
+                  key={"Inventory"}
+                  onClick={() => navigate("inventory")}
+                  sx={{
+                    pl: 4,
+                    borderRadius: 2,
+                    bgcolor: pathname === "/inventory" ? "#2196F3" : "",
+                    color: pathname === "/inventory" ? "#fff" : "",
+                  }}
+                >
                   <ListItemIcon>
                     <MailIcon />
                   </ListItemIcon>
@@ -92,11 +122,20 @@ function Sidebar() {
                 </ListItem>
               </List>
             </Collapse>
-            <ListItem button key={"Dashboard"}>
+            <ListItem
+              button
+              key={"Orders"}
+              onClick={() => navigate("orders")}
+              sx={{
+                borderRadius: 2,
+                bgcolor: pathname === "/orders" ? "#2196F3" : "",
+                color: pathname === "/orders" ? "#fff" : "",
+              }}
+            >
               <ListItemIcon>
                 <ShoppingCartIcon />
               </ListItemIcon>
-              <ListItemText primary={"Oders"} />
+              <ListItemText primary={"Orders"} />
             </ListItem>
             <ListItem button key={"users"}>
               <ListItemIcon>
