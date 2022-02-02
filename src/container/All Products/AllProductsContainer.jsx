@@ -1,44 +1,8 @@
 import AppBar from "../../Components/AppBar/AppBar";
 import Tabs from "../../Components/Tabs/Tabs";
-import Table from "../../Components/Table/Table";
-import Cardblue from "../../Components/Cardblue/Cardblue";
+import { TabData } from "./TabData";
 
 function AllProductsContainer() {
-  const TabData = [
-    {
-      tabName: "All",
-      tabComponenet: Table,
-      tabPadding: 0,
-      tabIndex: 0,
-      componentData: {
-        tableColumns: ["A", "B"],
-        tableData: ["abc", "xyz"],
-        sortOption: ["Asc", "Desc"],
-      },
-    },
-    {
-      tabName: "Active",
-      tabComponenet: Cardblue,
-      tabPadding: 5,
-      tabIndex: 1,
-      componentData: {},
-    },
-    {
-      tabName: "Draft",
-      tabComponenet: Cardblue,
-      tabPadding: 0,
-      tabIndex: 1,
-      componentData: {},
-    },
-    {
-      tabName: "Archive",
-      tabComponenet: Cardblue,
-      tabPadding: 0,
-      tabIndex: 1,
-      componentData: {},
-    },
-  ];
-
   return (
     <AppBar>
       <div className="container-fluid py-2 px-0">

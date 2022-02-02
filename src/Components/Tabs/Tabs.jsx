@@ -67,16 +67,23 @@ export default function BasicTabs({ TabData }) {
             ))}
           </Tabs>
         </Box>
-        {TabData.map(({ tabIndex, tabPadding, tabComponenet: Component }) => (
-          <TabPanel
-            key={tabIndex}
-            value={value}
-            index={tabIndex}
-            tabPadding={tabPadding}
-          >
-            <Component />
-          </TabPanel>
-        ))}
+        {TabData.map(
+          ({
+            tabIndex,
+            tabPadding,
+            tabComponenet: Component,
+            componentData,
+          }) => (
+            <TabPanel
+              key={tabIndex}
+              value={value}
+              index={tabIndex}
+              tabPadding={tabPadding}
+            >
+              <Component componentData={componentData} />
+            </TabPanel>
+          )
+        )}
       </Box>
     </div>
   );

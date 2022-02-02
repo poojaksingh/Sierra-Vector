@@ -50,7 +50,7 @@ function Sidebar() {
             <ListItem
               button
               key={"Dashboard"}
-              onClick={() => navigate("dashboard")}
+              onClick={() => navigate("/dashboard")}
               sx={{
                 borderRadius: 2,
                 bgcolor: pathname === "/dashboard" ? "#2196F3" : "",
@@ -59,7 +59,7 @@ function Sidebar() {
             >
               <ListItemIcon
                 sx={{
-                  color: pathname === "/" ? "#fff" : "",
+                  color: pathname === "/dashboard" ? "#fff" : "",
                 }}
               >
                 <DashboardIcon />
@@ -78,7 +78,7 @@ function Sidebar() {
               }}
             >
               <ListItemIcon>
-                <i class="fas fa-box-open"></i>
+                <i className="fas fa-box-open"></i>
               </ListItemIcon>
               <ListItemText primary={"Products"} />
               {open ? <ExpandLess /> : <ExpandMore />}
@@ -88,12 +88,12 @@ function Sidebar() {
                 <ListItem
                   button
                   key={"All Products"}
-                  onClick={() => navigate("allProducts")}
+                  onClick={() => navigate("/allProducts")}
                   sx={{
                     pl: 4,
                     borderRadius: 2,
-                    bgcolor: pathname === "/" ? "#2196F3" : "",
-                    color: pathname === "/" ? "#fff" : "",
+                    bgcolor: pathname === "/allProducts" ? "#2196F3" : "",
+                    color: pathname === "/allProducts" ? "#fff" : "",
                   }}
                 >
                   <ListItemText primary="All Products" />
@@ -101,7 +101,7 @@ function Sidebar() {
                 <ListItem
                   button
                   key={"Categories"}
-                  onClick={() => navigate("categories")}
+                  onClick={() => navigate("/categories")}
                   sx={{
                     pl: 4,
                     borderRadius: 2,
@@ -117,7 +117,7 @@ function Sidebar() {
                 <ListItem
                   button
                   key={"Inventory"}
-                  onClick={() => navigate("inventory")}
+                  onClick={() => navigate("/inventory")}
                   sx={{
                     pl: 4,
                     borderRadius: 2,
@@ -135,7 +135,7 @@ function Sidebar() {
             <ListItem
               button
               key={"Orders"}
-              onClick={() => navigate("orders")}
+              onClick={() => navigate("/orders")}
               sx={{
                 borderRadius: 2,
                 bgcolor: pathname === "/orders" ? "#2196F3" : "",
@@ -150,7 +150,7 @@ function Sidebar() {
             <ListItem
               button
               key={"Customers"}
-              onClick={() => navigate("customer")}
+              onClick={() => navigate("/customer")}
               sx={{
                 borderRadius: 2,
                 bgcolor: pathname === "/customer" ? "#2196F3" : "",
@@ -171,7 +171,7 @@ function Sidebar() {
             <ListItem
               button
               key={"Coupons"}
-              onClick={() => navigate("coupons")}
+              onClick={() => navigate("/coupons")}
               sx={{
                 borderRadius: 2,
                 bgcolor: pathname === "/coupons" ? "#2196F3" : "",
