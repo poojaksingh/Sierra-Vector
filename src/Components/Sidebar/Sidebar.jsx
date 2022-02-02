@@ -50,11 +50,11 @@ function Sidebar() {
             <ListItem
               button
               key={"Dashboard"}
-              onClick={() => navigate("orders")}
+              onClick={() => navigate("dashboard")}
               sx={{
                 borderRadius: 2,
-                bgcolor: pathname === "/orders" ? "#2196F3" : "",
-                color: pathname === "/orders" ? "#fff" : "",
+                bgcolor: pathname === "/dashboard" ? "#2196F3" : "",
+                color: pathname === "/dashboard" ? "#fff" : "",
               }}
             >
               <ListItemIcon
@@ -66,7 +66,17 @@ function Sidebar() {
               </ListItemIcon>
               <ListItemText primary={"Dashboard"} />
             </ListItem>
-            <ListItem button key={"Products"} onClick={() => setOpen(!open)}>
+            <ListItem
+              button
+              key={"Products"}
+              onClick={() => setOpen(!open)}
+              // onClick={() => navigate("/")}
+              sx={{
+                borderRadius: 2,
+                bgcolor: pathname === "/" ? "#2196F3" : "",
+                color: pathname === "/" ? "#fff" : "",
+              }}
+            >
               <ListItemIcon>
                 <i class="fas fa-box-open"></i>
               </ListItemIcon>
@@ -137,11 +147,20 @@ function Sidebar() {
               </ListItemIcon>
               <ListItemText primary={"Orders"} />
             </ListItem>
-            <ListItem button key={"users"}>
+            <ListItem
+              button
+              key={"Customers"}
+              onClick={() => navigate("customer")}
+              sx={{
+                borderRadius: 2,
+                bgcolor: pathname === "/customer" ? "#2196F3" : "",
+                color: pathname === "/customer" ? "#fff" : "",
+              }}
+            >
               <ListItemIcon>
                 <PersonIcon />
               </ListItemIcon>
-              <ListItemText primary={"Users"} />
+              <ListItemText primary={"Customers"} />
             </ListItem>
             <ListItem button key={"Analytics"}>
               <ListItemIcon>
@@ -149,7 +168,16 @@ function Sidebar() {
               </ListItemIcon>
               <ListItemText primary={"Analytics"} />
             </ListItem>
-            <ListItem button key={"Coupons"}>
+            <ListItem
+              button
+              key={"Coupons"}
+              onClick={() => navigate("coupons")}
+              sx={{
+                borderRadius: 2,
+                bgcolor: pathname === "/coupons" ? "#2196F3" : "",
+                color: pathname === "/coupons" ? "#fff" : "",
+              }}
+            >
               <ListItemIcon>
                 <MailIcon />
               </ListItemIcon>
