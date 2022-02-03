@@ -1,6 +1,6 @@
 import Table from "../../Components/Table/Table";
 import Cardblue from "../../Components/Cardblue/Cardblue";
-import { tableColumns } from "./TableData";
+import { tableColumns, tableData, sortOption, filterOption } from "./TableData";
 
 export const TabData = [
   {
@@ -9,10 +9,10 @@ export const TabData = [
     tabPadding: 0,
     tabIndex: 0,
     componentData: {
-      tableColumns: tableColumns,
-      tableData: "https://jsonplaceholder.typicode.com/users",
-      sortOption: ["Ascending", "Descending", "Reset"],
-      filterOption: ["Ascending", "Descending", "Reset"],
+      tableColumns,
+      tableData,
+      sortOption,
+      filterOption,
     },
   },
   {

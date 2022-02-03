@@ -1,3 +1,5 @@
+import { fetchUsers } from "../../Services/index";
+
 export const tableColumns = [
   {
     id: "id",
@@ -24,3 +26,9 @@ export const tableColumns = [
     label: "Phone",
   },
 ];
+
+export const tableData = fetchUsers;
+
+export const sortOption = ["Ascending", "Descending", "Reset"];
+
+export const filterOption = ["Ascending", "Descending", "Reset"];

@@ -185,7 +185,7 @@ export default function EnhancedTable({ componentData }) {
 
   const initialFunction = async () => {
     setColumns(tableColumns);
-    const { data } = await Axios.get(tableData);
+    const { data } = await tableData();
     setRows(data);
   };
 
