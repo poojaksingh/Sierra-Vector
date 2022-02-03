@@ -50,16 +50,16 @@ function Sidebar() {
             <ListItem
               button
               key={"Dashboard"}
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/")}
               sx={{
                 borderRadius: 2,
-                bgcolor: pathname === "/dashboard" ? "#2196F3" : "",
-                color: pathname === "/dashboard" ? "#fff" : "",
+                bgcolor: pathname === "/" ? "#2196F3" : "",
+                color: pathname === "/" ? "#fff" : "",
               }}
             >
               <ListItemIcon
                 sx={{
-                  color: pathname === "/dashboard" ? "#fff" : "",
+                  color: pathname === "/" ? "#fff" : "",
                 }}
               >
                 <DashboardIcon />
@@ -71,11 +71,6 @@ function Sidebar() {
               key={"Products"}
               onClick={() => setOpen(!open)}
               // onClick={() => navigate("/")}
-              sx={{
-                borderRadius: 2,
-                bgcolor: pathname === "/" ? "#2196F3" : "",
-                color: pathname === "/" ? "#fff" : "",
-              }}
             >
               <ListItemIcon>
                 <i className="fas fa-box-open"></i>
@@ -90,45 +85,39 @@ function Sidebar() {
                   key={"All Products"}
                   onClick={() => navigate("/allProducts")}
                   sx={{
-                    pl: 4,
+                    pl: 8,
                     borderRadius: 2,
                     bgcolor: pathname === "/allProducts" ? "#2196F3" : "",
                     color: pathname === "/allProducts" ? "#fff" : "",
                   }}
                 >
-                  <ListItemText primary="All Products" />
+                  <ListItemText primary="- All Products" />
                 </ListItem>
                 <ListItem
                   button
                   key={"Categories"}
                   onClick={() => navigate("/categories")}
                   sx={{
-                    pl: 4,
+                    pl: 8,
                     borderRadius: 2,
                     bgcolor: pathname === "/categories" ? "#2196F3" : "",
                     color: pathname === "/categories" ? "#fff" : "",
                   }}
                 >
-                  <ListItemIcon>
-                    <MailIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="categories" />
+                  <ListItemText primary="- categories" />
                 </ListItem>
                 <ListItem
                   button
                   key={"Inventory"}
                   onClick={() => navigate("/inventory")}
                   sx={{
-                    pl: 4,
+                    pl: 8,
                     borderRadius: 2,
                     bgcolor: pathname === "/inventory" ? "#2196F3" : "",
                     color: pathname === "/inventory" ? "#fff" : "",
                   }}
                 >
-                  <ListItemIcon>
-                    <MailIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Inventory" />
+                  <ListItemText primary="- Inventory" />
                 </ListItem>
               </List>
             </Collapse>
@@ -142,7 +131,11 @@ function Sidebar() {
                 color: pathname === "/orders" ? "#fff" : "",
               }}
             >
-              <ListItemIcon>
+              <ListItemIcon
+                sx={{
+                  color: pathname === "/orders" ? "#fff" : "",
+                }}
+              >
                 <ShoppingCartIcon />
               </ListItemIcon>
               <ListItemText primary={"Orders"} />
@@ -157,7 +150,11 @@ function Sidebar() {
                 color: pathname === "/customer" ? "#fff" : "",
               }}
             >
-              <ListItemIcon>
+              <ListItemIcon
+                sx={{
+                  color: pathname === "/customer" ? "#fff" : "",
+                }}
+              >
                 <PersonIcon />
               </ListItemIcon>
               <ListItemText primary={"Customers"} />
@@ -178,7 +175,11 @@ function Sidebar() {
                 color: pathname === "/coupons" ? "#fff" : "",
               }}
             >
-              <ListItemIcon>
+              <ListItemIcon
+                sx={{
+                  color: pathname === "/coupons" ? "#fff" : "",
+                }}
+              >
                 <MailIcon />
               </ListItemIcon>
               <ListItemText primary={"Coupons"} />
