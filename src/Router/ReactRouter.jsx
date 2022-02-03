@@ -13,6 +13,7 @@ function ReactRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AllProducts />} />
+        <Route path="/allProducts" element={<AllProducts />} />
         <Route path="/orders" element={<OrdersMain />} />
         <Route path="/categories" element={<AllProductsCategory />} />
         <Route path="/inventory" element={<AllProductsInventory />} />

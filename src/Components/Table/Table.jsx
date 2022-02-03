@@ -187,6 +187,7 @@ export default function EnhancedTable({ componentData }) {
     setColumns(tableColumns);
     const { data } = await tableData();
     setRows(data);
+    console.log(data);
   };
 
   const handleSelectAllClick = (event) => {
@@ -278,7 +279,10 @@ export default function EnhancedTable({ componentData }) {
                           }}
                         />
                       </TableCell>
-                      <TableCell
+                      {tableColumns.map((col) => (
+                        <TableCell align="left">{row[col.id]}</TableCell>
+                      ))}
+                      {/* <TableCell
                         component="th"
                         id={labelId}
                         scope="row"
@@ -286,9 +290,9 @@ export default function EnhancedTable({ componentData }) {
                       >
                         {row.id}
                       </TableCell>
-                      <TableCell align="right">{row.name}</TableCell>
+                      <TableCell align="left">{row.title}</TableCell>
                       <TableCell align="right">{row.email}</TableCell>
-                      <TableCell align="right">{row.phone}</TableCell>
+                      <TableCell align="right">{row.phone}</TableCell> */}
                     </TableRow>
                   );
                 })}

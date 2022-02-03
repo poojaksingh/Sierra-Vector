@@ -4,7 +4,7 @@ export const tableColumns = [
   {
     id: "id",
     numeric: false,
-    disablePadding: true,
+    disablePadding: false,
     label: "ID",
   },
   {
@@ -29,6 +29,6 @@ export const tableColumns = [
 
 export const tableData = fetchUsers;
 
-export const sortOption = ["Ascending", "Descending", "Reset"];
+export const sortOption = ["Inventory (Increasing)", "Inventory (Decreasing)"];
 
-export const filterOption = ["Ascending", "Descending", "Reset"];
+export const filterOption = ["Active", "Draft", "Archieved"];

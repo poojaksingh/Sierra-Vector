@@ -4,7 +4,7 @@ export const tableColumns = [
   {
     id: "id",
     numeric: false,
-    disablePadding: true,
+    disablePadding: false,
     label: "ID",
   },
   {
@@ -29,6 +29,16 @@ export const tableColumns = [
 
 export const tableData = fetchUsers;
 
-export const sortOption = ["Ascending", "Descending", "Reset"];
+export const sortOption = [
+  "Number of items(Ascending)",
+  "Number of items(Descending)",
+  "Order total(Increasing)",
+  "Order total(Decreasing)",
+];
 
-export const filterOption = ["Ascending", "Descending", "Reset"];
+export const filterOption = [
+  "Pending orders",
+  "Delivered",
+  "Cancelled",
+  "Payment status",
+];

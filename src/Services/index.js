@@ -4,4 +4,11 @@ const fetchUsers = () => {
   return API.get("/users");
 };
 
-export { fetchUsers };
+const fetchTodos = () => {
+  return API.get("/todos");
+};
+const fetchCoupons = () => {
+  return API.get("/posts");
+};
+
+export { fetchUsers, fetchTodos, fetchCoupons };
