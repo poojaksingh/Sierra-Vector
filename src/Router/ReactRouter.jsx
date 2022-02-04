@@ -7,6 +7,7 @@ import AllProductsCategory from "../Pages/AllProductsCategory";
 import AllProductsInventory from "../Pages/AllProductsInventory";
 import CouponsMain from "../Pages/CouponsMain";
 import CustomersMain from "../Pages/CustomersMain";
+import DashboardMain from "../Pages/DashboardMain";
 
 function ReactRouter() {
   return (
@@ -19,6 +20,7 @@ function ReactRouter() {
         <Route path="/inventory" element={<AllProductsInventory />} />
         <Route path="/coupons" element={<CouponsMain />} />
         <Route path="/customer" element={<CustomersMain />} />
+        <Route path="/dashboard" element={<DashboardMain />} />
       </Routes>
     </BrowserRouter>
   );

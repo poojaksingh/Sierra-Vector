@@ -50,16 +50,16 @@ function Sidebar() {
             <ListItem
               button
               key={"Dashboard"}
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/dashboard")}
               sx={{
                 borderRadius: 2,
-                bgcolor: pathname === "/" ? "#2196F3" : "",
-                color: pathname === "/" ? "#fff" : "",
+                bgcolor: pathname === "/dashboard" ? "#2196F3" : "",
+                color: pathname === "/dashboard" ? "#fff" : "",
               }}
             >
               <ListItemIcon
                 sx={{
-                  color: pathname === "/" ? "#fff" : "",
+                  color: pathname === "/dashboard" ? "#fff" : "",
                 }}
               >
                 <DashboardIcon />
