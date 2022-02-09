@@ -48,7 +48,23 @@ function EnhancedTableHead(props) {
   );
 }
 
-const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
+const EnhancedTableToolbar = ({
+  copyData,
+  sortOption,
+  filterOption,
+  SetFilter,
+  searchColumn,
+}) => {
+  const [search, setSearch] = useState("");
+
+  const _filterSearch = async (value) => {
+    setSearch(value);
+    let filter = copyData.filter(
+      (data) =>
+        data[searchColumn].toLowerCase().search(value.toLowerCase()) !== -1
+    );
+    SetFilter(filter);
+  };
   return (
     <Toolbar
       sx={{
@@ -66,6 +82,8 @@ const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedby="basic-addon2"
+                value={search}
+                onChange={(e) => _filterSearch(e.target.value)}
               />
               <div className="input-group-append  search_Icon">
                 <span
@@ -172,7 +190,9 @@ const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
 };
 
 export default function EnhancedTable({ componentData }) {
-  const { tableColumns, tableData, sortOption, filterOption } = componentData;
+  const { tableColumns, tableData, sortOption, filterOption, searchColumn } =
+    componentData;
+  const [copyData, setCopyData] = useState([]);
   const [rows, setRows] = useState([]);
   const [columns, setColumns] = useState([]);
   const [selected, setSelected] = useState([]);
@@ -187,6 +207,7 @@ export default function EnhancedTable({ componentData }) {
     setColumns(tableColumns);
     const { data } = await tableData();
     setRows(data);
+    setCopyData(data);
     console.log(data);
   };
 
@@ -238,8 +259,11 @@ export default function EnhancedTable({ componentData }) {
     <Box sx={{ width: "100%", border: 0 }}>
       <Paper sx={{ width: "100%" }}>
         <EnhancedTableToolbar
+          copyData={copyData}
+          searchColumn={searchColumn}
           sortOption={sortOption}
           filterOption={filterOption}
+          SetFilter={(data) => setRows(data)}
         />
         <TableContainer>
           <Table
@@ -310,7 +334,7 @@ export default function EnhancedTable({ componentData }) {
         </TableContainer>
         <TablePagination
           sx={{
-            display: "none",
+            display: "block",
           }}
           rowsPerPageOptions={[5, 10, 25]}
           component="div"

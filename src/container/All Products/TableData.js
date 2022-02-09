@@ -29,6 +29,8 @@ export const tableColumns = [
 
 export const tableData = fetchUsers;
 
+export const searchColumn = "name";
+
 export const sortOption = ["Inventory (Increasing)", "Inventory (Decreasing)"];
 
 export const filterOption = ["Active", "Draft", "Archieved"];

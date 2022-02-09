@@ -73,12 +73,14 @@ export default function BasicTabs({ TabData }) {
             tabPadding,
             tabComponenet: Component,
             componentData,
+            searchColumn,
           }) => (
             <TabPanel
               key={tabIndex}
               value={value}
               index={tabIndex}
               tabPadding={tabPadding}
+              searchColumn={searchColumn}
             >
               <Component componentData={componentData} />
             </TabPanel>
