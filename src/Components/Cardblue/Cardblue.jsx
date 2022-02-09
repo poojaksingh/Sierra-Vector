@@ -9,7 +9,7 @@ function Cardblue() {
           padding: "0px",
           margin: "0px",
           borderRadius: "15px",
-          background: "#D4F1F4",
+          background: "#EDF6FF",
           border: "none",
         }}
       >

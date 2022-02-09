@@ -17,6 +17,7 @@ import {
   BarChart,
   Bar,
   text,
+  Label,
 } from "recharts";
 
 const data = [
@@ -126,17 +127,7 @@ function LineChartSample() {
                 <b style={{ fontSize: "12px" }}>Sales Overview</b>
               </div>
               <CardContent>
-                <BarChart
-                  width={500}
-                  height={300}
-                  data={BarData}
-                  margin={{
-                    top: 20,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}
-                >
+                <BarChart width={500} height={150} data={BarData}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="name" />
                   <YAxis />
@@ -210,9 +201,7 @@ function LineChartSample() {
                     fill="#8884d8"
                     dataKey="value"
                   >
-                    <text x={90} y={70} textAnchor="middle">
-                      110%
-                    </text>
+                    <Label value="100%" position="center" />
                     {Piedata.map((entry, index) => (
                       <Cell
                         key={`cell-${index}`}

@@ -18,7 +18,15 @@ function Customers() {
             <small>Import list</small>
           </div>
           <div className="p-2">
-            <button type="button" className="btn btn-primary py-0">
+            <button
+              type="button"
+              className="btn btn-primary py-1"
+              style={{
+                backgroundColor: "#4AA2FA",
+                border: "none",
+                fontSize: "12px",
+              }}
+            >
               <small>+ Add Customer</small>
             </button>
           </div>
