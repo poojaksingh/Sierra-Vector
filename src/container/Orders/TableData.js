@@ -57,20 +57,24 @@ export const filterConfig = [
     filterName: "Pending orders",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Delivered",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Cancelled",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Payment status",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
 ];

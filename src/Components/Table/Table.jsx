@@ -192,7 +192,12 @@ const EnhancedTableToolbar = ({
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
                 {filterConfig.map(
-                  ({ filterName, filterFunction, filterColumn }) => (
+                  ({
+                    filterName,
+                    filterFunction,
+                    filterColumn,
+                    filterValue,
+                  }) => (
                     <li key={filterName}>
                       <button
                         className="dropdown-item"
@@ -201,7 +206,7 @@ const EnhancedTableToolbar = ({
                           _filterFunction(
                             filterFunction,
                             filterColumn,
-                            filterName
+                            filterValue
                           )
                         }
                       >
@@ -335,7 +340,9 @@ export default function EnhancedTable({ componentData }) {
                         />
                       </TableCell>
                       {tableColumns.map((col) => (
-                        <TableCell align="left">{row[col.id]}</TableCell>
+                        <TableCell align="left">
+                          {row[col.id].toString()}
+                        </TableCell>
                       ))}
                       {/* <TableCell
                         component="th"

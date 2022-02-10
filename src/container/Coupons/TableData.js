@@ -62,15 +62,18 @@ export const filterConfig = [
     filterName: "Active",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Scheduled",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Expired",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
 ];

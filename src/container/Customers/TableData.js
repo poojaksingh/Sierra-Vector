@@ -1,4 +1,5 @@
 import { fetchTodos } from "../../Services/index";
+import { tableFilter } from "../../Helper/TableFunctions";
 
 export const tableColumns = [
   {
@@ -11,7 +12,13 @@ export const tableColumns = [
     id: "title",
     numeric: false,
     disablePadding: false,
-    label: "title",
+    label: "Title",
+  },
+  {
+    id: "completed",
+    numeric: false,
+    disablePadding: false,
+    label: "Completed",
   },
 ];
 
@@ -48,12 +55,14 @@ export const sortConfig = [
 export const filterConfig = [
   {
     filterName: "Subscribed",
-    filterFunction: null,
-    filterColumn: "status",
+    filterFunction: tableFilter,
+    filterColumn: "completed",
+    filterValue: true,
   },
   {
     filterName: "Not subscribed",
-    filterFunction: null,
-    filterColumn: "status",
+    filterFunction: tableFilter,
+    filterColumn: "completed",
+    filterValue: false,
   },
 ];

@@ -62,15 +62,18 @@ export const filterConfig = [
     filterName: "Ascending",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Descending",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Reset",
     filterFunction: null,
     filterColumn: "status",
+    filterValue: "",
   },
 ];

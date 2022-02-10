@@ -54,15 +54,18 @@ export const filterConfig = [
     filterName: "Active",
     filterFunction: tableFilter,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Draft",
     filterFunction: tableFilter,
     filterColumn: "status",
+    filterValue: "",
   },
   {
     filterName: "Archieved",
     filterFunction: tableFilter,
     filterColumn: "status",
+    filterValue: "",
   },
 ];

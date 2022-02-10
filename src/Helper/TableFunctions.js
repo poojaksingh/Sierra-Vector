@@ -9,6 +9,6 @@ export const tableDescendingSort = async (arr, column) => {
 };
 
 export const tableFilter = async (arr, column, value) => {
-  const data = arr.filter((row) => row[column] === value.toLowerCase());
+  const data = arr.filter((row) => row[column] === value);
   return data;
 };
