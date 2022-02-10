@@ -29,12 +29,48 @@ export const tableColumns = [
 
 export const tableData = fetchCoupons;
 
-export const sortOption = [
-  "Status",
-  "Validity",
-  "Date created",
-  "No. Of times used (Ascending)",
-  "No. Of times used (Descending)",
+export const sortConfig = [
+  {
+    sortName: "Status",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Validity",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Date created",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "No. Of times used (Ascending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "No. Of times used (Descending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
 ];
 
-export const filterOption = ["Active", "Scheduled", "Expired"];
+export const filterConfig = [
+  {
+    filterName: "Active",
+    filterFunction: null,
+    filterColumn: "status",
+  },
+  {
+    filterName: "Scheduled",
+    filterFunction: null,
+    filterColumn: "status",
+  },
+  {
+    filterName: "Expired",
+    filterFunction: null,
+    filterColumn: "status",
+  },
+];

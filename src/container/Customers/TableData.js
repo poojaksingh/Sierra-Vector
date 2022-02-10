@@ -17,12 +17,43 @@ export const tableColumns = [
 
 export const tableData = fetchTodos;
 
-export const sortOption = [
-  "Email Subscription",
-  "Number of orders (Ascending)",
-  "Number of orders (Descending)",
-  "Amount spent (Ascending)",
-  "Amount spent (Descending)",
+export const sortConfig = [
+  {
+    sortName: "Email Subscription",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Number of orders (Ascending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Number of orders (Descending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Amount spent (Ascending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Amount spent (Descending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
 ];
 
-export const filterOption = ["Subscribed", "Not subscribed"];
+export const filterConfig = [
+  {
+    filterName: "Subscribed",
+    filterFunction: null,
+    filterColumn: "status",
+  },
+  {
+    filterName: "Not subscribed",
+    filterFunction: null,
+    filterColumn: "status",
+  },
+];
