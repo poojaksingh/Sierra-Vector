@@ -50,21 +50,35 @@ function EnhancedTableHead(props) {
 
 const EnhancedTableToolbar = ({
   copyData,
-  sortOption,
-  filterOption,
-  SetFilter,
+  sortConfig,
+  filterConfig,
   searchColumn,
+  setFilter,
+  resetFilter,
 }) => {
   const [search, setSearch] = useState("");
 
-  const _filterSearch = async (value) => {
+  const _searchFunction = async (value) => {
     setSearch(value);
     let filter = copyData.filter(
       (data) =>
         data[searchColumn].toLowerCase().search(value.toLowerCase()) !== -1
     );
-    SetFilter(filter);
+    setFilter(filter);
   };
+
+  const _sortFunction = async (sortFunction, columnName) => {
+    const filter = await sortFunction(copyData, columnName);
+    setFilter([]);
+    setFilter(filter);
+  };
+
+  const _filterFunction = async (filterFunction, columnName, filterValue) => {
+    const filter = await filterFunction(copyData, columnName, filterValue);
+    console.log(filter);
+    // setFilter(filter);
+  };
+
   return (
     <Toolbar
       sx={{
@@ -83,7 +97,7 @@ const EnhancedTableToolbar = ({
                 aria-label="Search"
                 aria-describedby="basic-addon2"
                 value={search}
-                onChange={(e) => _filterSearch(e.target.value)}
+                onChange={(e) => _searchFunction(e.target.value)}
               />
               <div className="input-group-append  search_Icon">
                 <span
@@ -131,10 +145,14 @@ const EnhancedTableToolbar = ({
                 </div>
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                {sortOption.map((option) => (
-                  <li key={option}>
-                    <button className="dropdown-item" type="button">
-                      {option}
+                {sortConfig.map(({ sortName, sortFunction, sortColumn }) => (
+                  <li key={sortName}>
+                    <button
+                      className="dropdown-item"
+                      type="button"
+                      onClick={() => _sortFunction(sortFunction, sortColumn)}
+                    >
+                      {sortName}
                     </button>
                   </li>
                 ))}
@@ -173,13 +191,25 @@ const EnhancedTableToolbar = ({
                 </div>
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                {filterOption.map((option) => (
-                  <li key={option}>
-                    <button className="dropdown-item" type="button">
-                      {option}
-                    </button>
-                  </li>
-                ))}
+                {filterConfig.map(
+                  ({ filterName, filterFunction, filterColumn }) => (
+                    <li key={filterName}>
+                      <button
+                        className="dropdown-item"
+                        type="button"
+                        onClick={() =>
+                          _filterFunction(
+                            filterFunction,
+                            filterColumn,
+                            filterName
+                          )
+                        }
+                      >
+                        {filterName}
+                      </button>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -190,7 +220,7 @@ const EnhancedTableToolbar = ({
 };
 
 export default function EnhancedTable({ componentData }) {
-  const { tableColumns, tableData, sortOption, filterOption, searchColumn } =
+  const { tableColumns, tableData, sortConfig, filterConfig, searchColumn } =
     componentData;
   const [copyData, setCopyData] = useState([]);
   const [rows, setRows] = useState([]);
@@ -261,9 +291,10 @@ export default function EnhancedTable({ componentData }) {
         <EnhancedTableToolbar
           copyData={copyData}
           searchColumn={searchColumn}
-          sortOption={sortOption}
-          filterOption={filterOption}
-          SetFilter={(data) => setRows(data)}
+          sortConfig={sortConfig}
+          filterConfig={filterConfig}
+          setFilter={(data) => setRows(data)}
+          resetFilter={() => setRows(copyData)}
         />
         <TableContainer>
           <Table

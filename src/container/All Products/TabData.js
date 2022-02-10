@@ -3,8 +3,8 @@ import Cardblue from "../../Components/Cardblue/Cardblue";
 import {
   tableColumns,
   tableData,
-  sortOption,
-  filterOption,
+  sortConfig,
+  filterConfig,
   searchColumn,
 } from "./TableData";
 
@@ -18,8 +18,8 @@ export const TabData = [
       tableColumns,
       tableData,
       searchColumn,
-      sortOption,
-      filterOption,
+      sortConfig,
+      filterConfig,
     },
   },
   {
