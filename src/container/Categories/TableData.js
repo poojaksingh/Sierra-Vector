@@ -11,6 +11,7 @@ export const tableColumns = [
     numeric: false,
     disablePadding: true,
     label: "ID",
+    main: true,
   },
   {
     id: "title",

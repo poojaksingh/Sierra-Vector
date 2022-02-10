@@ -6,6 +6,7 @@ export const tableColumns = [
     numeric: false,
     disablePadding: false,
     label: "ID",
+    main: true,
   },
   {
     id: "title",

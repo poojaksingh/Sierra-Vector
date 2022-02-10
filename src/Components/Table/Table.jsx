@@ -230,6 +230,7 @@ export default function EnhancedTable({ componentData }) {
   const [copyData, setCopyData] = useState([]);
   const [rows, setRows] = useState([]);
   const [columns, setColumns] = useState([]);
+  const [mainColumn, setMainColumn] = useState("");
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -239,16 +240,22 @@ export default function EnhancedTable({ componentData }) {
   }, []);
 
   const initialFunction = async () => {
-    setColumns(tableColumns);
+    await initializeColumnData();
     const { data } = await tableData();
     setRows(data);
     setCopyData(data);
     console.log(data);
   };
 
+  const initializeColumnData = async () => {
+    setColumns(tableColumns);
+    const data = tableColumns.filter((col) => col.main === true);
+    setMainColumn(data[0]?.id);
+  };
+
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
+      const newSelecteds = rows.map((n) => n[mainColumn]);
       setSelected(newSelecteds);
       return;
     }
@@ -317,17 +324,17 @@ export default function EnhancedTable({ componentData }) {
               {rows
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row[mainColumn]);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleClick(event, row[mainColumn])}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row[mainColumn]}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">

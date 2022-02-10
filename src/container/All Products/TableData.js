@@ -23,6 +23,7 @@ export const tableColumns = [
     numeric: false,
     disablePadding: false,
     label: "Email",
+    main: true,
   },
   {
     id: "phone",
