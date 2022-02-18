@@ -3,27 +3,70 @@ import { tableFilter } from "../../Helper/TableFunctions";
 
 export const tableColumns = [
   {
-    id: "id",
+    id: "customerId",
     numeric: false,
     disablePadding: false,
-    label: "ID",
+    label: "Customer ID",
     main: true,
   },
   {
-    id: "title",
+    id: "customerName",
     numeric: false,
     disablePadding: false,
-    label: "Title",
+    label: "Customer Name",
   },
   {
-    id: "completed",
+    id: "emailSubscription",
     numeric: false,
     disablePadding: false,
-    label: "Completed",
+    label: "Email Subscription",
+  },
+  {
+    id: "totalOrders",
+    numeric: false,
+    disablePadding: false,
+    label: "Total Orders",
+  },
+  {
+    id: "totalAmount",
+    numeric: false,
+    disablePadding: false,
+    label: "Total Amount Spent",
+  },
+  {
+    id: "dateJoined",
+    numeric: false,
+    disablePadding: false,
+    label: "Date Joined",
   },
 ];
 
-export const tableData = fetchTodos;
+export const tableData = [
+  {
+    customerId: "#32345",
+    customerName: "Rocket Singh",
+    emailSubscription: "Subscribed",
+    totalOrders: "1",
+    totalAmount: "500",
+    dateJoined: "2nd Jan, 2022",
+  },
+  {
+    customerId: "#32346",
+    customerName: "Rocket Singh",
+    emailSubscription: "Subscribed",
+    totalOrders: "1",
+    totalAmount: "500",
+    dateJoined: "2nd Jan, 2022",
+  },
+  {
+    customerId: "#32347",
+    customerName: "Rocket Singh",
+    emailSubscription: "Subscribed",
+    totalOrders: "1",
+    totalAmount: "500",
+    dateJoined: "2nd Jan, 2022",
+  },
+];
 
 export const sortConfig = [
   {

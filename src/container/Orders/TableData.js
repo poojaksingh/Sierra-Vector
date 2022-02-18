@@ -50,7 +50,7 @@ export const tableData = [
   {
     orderId: "#1234",
     orderDate: "24/10/2022",
-    customerName: "Rocket singh",
+    customerName: "Rocket Singh",
     totalItems: "115",
     orderTotal: "20",
     orderStatus: "In transit",
@@ -59,7 +59,7 @@ export const tableData = [
   {
     orderId: "#1235",
     orderDate: "24/10/2022",
-    customerName: "Rocket singh",
+    customerName: "Rocket Singh",
     totalItems: "115",
     orderTotal: "20",
     orderStatus: "In transit",
@@ -68,7 +68,7 @@ export const tableData = [
   {
     orderId: "#1236",
     orderDate: "24/10/2022",
-    customerName: "Rocket singh",
+    customerName: "Rocket Singh",
     totalItems: "115",
     orderTotal: "20",
     orderStatus: "In transit",
