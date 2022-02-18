@@ -9,9 +9,12 @@ import BasicLineChart from "../../Components/BasicLineChart/BasicLineChart";
 import Table from "../../Components/Table/Table";
 import { tableColumns, tableData, sortOption, filterOption } from "./TableData";
 import GetAppIcon from "@mui/icons-material/GetApp";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { border } from "@mui/system";
 
 function Dashboard() {
+  const cardData = ["sales"];
   return (
     <AppBar>
       <div className="container-fluid py-2 px-0">
@@ -41,16 +44,16 @@ function Dashboard() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard />
+            <DashboardCard cardData={cardData} />
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard />
+            <DashboardCard cardData={cardData} />
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard />
+            <DashboardCard cardData={cardData} />
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard />
+            <DashboardCard cardData={cardData} />
           </div>
         </div>
       </div>
