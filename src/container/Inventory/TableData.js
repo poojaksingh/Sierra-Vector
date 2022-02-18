@@ -2,33 +2,70 @@ import { fetchUsers, fetchTodos } from "../../Services/index";
 
 export const tableColumns = [
   {
-    id: "id",
+    id: "productId",
     numeric: false,
     disablePadding: false,
-    label: "ID",
+    label: "Product ID",
     main: true,
   },
   {
-    id: "title",
+    id: "productName",
     numeric: false,
     disablePadding: false,
-    label: "title",
+    label: "Product name",
   },
-  // {
-  //   id: "email",
-  //   numeric: false,
-  //   disablePadding: false,
-  //   label: "Email",
-  // },
-  // {
-  //   id: "phone",
-  //   numeric: false,
-  //   disablePadding: false,
-  //   label: "Phone",
-  // },
+  {
+    id: "whenSoldOut",
+    numeric: false,
+    disablePadding: false,
+    label: "When sold out",
+  },
+  {
+    id: "incoming",
+    numeric: false,
+    disablePadding: false,
+    label: "Incoming",
+  },
+  {
+    id: "available",
+    numeric: false,
+    disablePadding: false,
+    label: "Available",
+  },
+  {
+    id: "finalStockAmount",
+    numeric: false,
+    disablePadding: false,
+    label: "Final stock amount",
+  },
 ];
 
-export const tableData = fetchTodos;
+export const tableData = [
+  {
+    productId: "#123477",
+    productName: "Shoe",
+    whenSoldOut: "Stop Selling",
+    incoming: "0",
+    available: "100 in stock",
+    finalStockAmount: "Cloud",
+  },
+  {
+    productId: "#123478",
+    productName: "Shoe",
+    whenSoldOut: "Stop Selling",
+    incoming: "100 units",
+    available: "100 in stock",
+    finalStockAmount: "Cloud",
+  },
+  {
+    productId: "#123479",
+    productName: "Shoe",
+    whenSoldOut: "Stop Selling",
+    incoming: "150 units",
+    available: "100 in stock",
+    finalStockAmount: "Cloud",
+  },
+];
 
 export const sortConfig = [
   {

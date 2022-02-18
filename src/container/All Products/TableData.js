@@ -7,46 +7,83 @@ import {
 
 export const tableColumns = [
   {
-    id: "id",
+    id: "productId",
     numeric: false,
     disablePadding: false,
-    label: "ID",
-  },
-  {
-    id: "name",
-    numeric: false,
-    disablePadding: false,
-    label: "Name",
-  },
-  {
-    id: "email",
-    numeric: false,
-    disablePadding: false,
-    label: "Email",
+    label: "Product ID",
     main: true,
   },
   {
-    id: "phone",
+    id: "productName",
     numeric: false,
     disablePadding: false,
-    label: "Phone",
+    label: "Product name",
+  },
+  {
+    id: "productCategory",
+    numeric: false,
+    disablePadding: false,
+    label: "Product category",
+  },
+  {
+    id: "status",
+    numeric: false,
+    disablePadding: false,
+    label: "Status",
+  },
+  {
+    id: "inventory",
+    numeric: false,
+    disablePadding: false,
+    label: "Inventory",
+  },
+  {
+    id: "vendor",
+    numeric: false,
+    disablePadding: false,
+    label: "Vendor",
   },
 ];
 
-export const tableData = fetchUsers;
+export const tableData = [
+  {
+    productId: "#1234777",
+    productName: "Shoe",
+    productCategory: "Sandals",
+    status: "Active",
+    inventory: "100 in stock",
+    vendor: "Cloud",
+  },
+  {
+    productId: "#1234666",
+    productName: "Flats",
+    productCategory: "Sandals",
+    status: "Active",
+    inventory: "100 in stock",
+    vendor: "Cloud",
+  },
+  {
+    productId: "#1234555",
+    productName: "Heels",
+    productCategory: "Sandals",
+    status: "Active",
+    inventory: "100 in stock",
+    vendor: "Cloud",
+  },
+];
 
-export const searchColumn = "name";
+export const searchColumn = "productName";
 
 export const sortConfig = [
   {
     sortName: "Inventory (Increasing)",
     sortFunction: tableAscendingSort,
-    sortColumn: "id",
+    sortColumn: "productName",
   },
   {
     sortName: "Inventory (Decreasing)",
     sortFunction: tableDescendingSort,
-    sortColumn: "id",
+    sortColumn: "productName",
   },
 ];
 

@@ -7,34 +7,34 @@ import {
 
 export const tableColumns = [
   {
-    id: "id",
+    id: "collectionTitle",
     numeric: false,
-    disablePadding: true,
-    label: "ID",
+    disablePadding: false,
+    label: "Collection Title",
     main: true,
   },
   {
-    id: "title",
+    id: "collectionDescription",
     numeric: false,
     disablePadding: false,
-    label: "title",
+    label: "Collection Description",
   },
-  // {
-  //   id: "email",
-  //   numeric: false,
-  //   disablePadding: false,
-  //   label: "Email",
-  // },
-  // {
-  //   id: "phone",
-  //   numeric: false,
-  //   disablePadding: false,
-  //   label: "Phone",
-  // },
 ];
 
-export const tableData = fetchTodos;
-
+export const tableData = [
+  {
+    collectionTitle: "All Sarees",
+    collectionDescription: "All Sarees",
+  },
+  {
+    collectionTitle: "Jeans",
+    collectionDescription: "Jeans",
+  },
+  {
+    collectionTitle: "Sportswear",
+    collectionDescription: "Sportswear",
+  },
+];
 export const sortConfig = [
   {
     sortName: "Inventory (Increasing)",
