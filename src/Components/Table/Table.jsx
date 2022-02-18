@@ -241,10 +241,16 @@ export default function EnhancedTable({ componentData }) {
 
   const initialFunction = async () => {
     await initializeColumnData();
-    const { data } = await tableData();
-    setRows(data);
-    setCopyData(data);
-    console.log(data);
+    let _tableData = [];
+    if (Array.isArray(tableData)) {
+      _tableData = tableData;
+    } else {
+      const { data } = await tableData();
+      _tableData = data;
+    }
+    setRows(_tableData);
+    setCopyData(_tableData);
+    console.log(_tableData);
   };
 
   const initializeColumnData = async () => {

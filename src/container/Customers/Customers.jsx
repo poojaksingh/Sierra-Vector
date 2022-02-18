@@ -1,6 +1,4 @@
 import { React, useState } from "react";
-import AppBar from "../../Components/AppBar/AppBar";
-
 import Tabs from "../../Components/Tabs/Tabs";
 import ModalAdd from "../../Components/FormDialog/FormDialog";
 import { TabData } from "./TabData";
@@ -15,7 +13,7 @@ function Customers() {
     setOpen(false);
   };
   return (
-    <AppBar>
+    <>
       <div className="container-fluid py-2 px-0">
         <div className="d-flex bd-highlight p-0">
           <div className=" flex-grow-1">
@@ -46,7 +44,7 @@ function Customers() {
       </div>
 
       <Tabs TabData={TabData} />
-    </AppBar>
+    </>
   );
 }
 

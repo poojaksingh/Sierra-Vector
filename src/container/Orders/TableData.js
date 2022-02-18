@@ -2,33 +2,79 @@ import { fetchUsers } from "../../Services/index";
 
 export const tableColumns = [
   {
-    id: "id",
+    id: "orderId",
     numeric: false,
     disablePadding: false,
-    label: "ID",
-  },
-  {
-    id: "name",
-    numeric: false,
-    disablePadding: false,
-    label: "Name",
-  },
-  {
-    id: "email",
-    numeric: false,
-    disablePadding: false,
-    label: "Email",
+    label: "Order ID",
     main: true,
   },
   {
-    id: "phone",
+    id: "orderDate",
     numeric: false,
     disablePadding: false,
-    label: "Phone",
+    label: "Order Date",
+  },
+  {
+    id: "customerName",
+    numeric: false,
+    disablePadding: false,
+    label: "Customer Name",
+  },
+  {
+    id: "totalItems",
+    numeric: false,
+    disablePadding: false,
+    label: "Total Items",
+  },
+  {
+    id: "orderTotal",
+    numeric: false,
+    disablePadding: false,
+    label: "Order Total",
+  },
+  {
+    id: "orderStatus",
+    numeric: false,
+    disablePadding: false,
+    label: "Order Status",
+  },
+  {
+    id: "paymentStatus",
+    numeric: false,
+    disablePadding: false,
+    label: "Payment Status",
   },
 ];
 
-export const tableData = fetchUsers;
+export const tableData = [
+  {
+    orderId: "#1234",
+    orderDate: "24/10/2022",
+    customerName: "Rocket singh",
+    totalItems: "115",
+    orderTotal: "20",
+    orderStatus: "In transit",
+    paymentStatus: "Paid",
+  },
+  {
+    orderId: "#1235",
+    orderDate: "24/10/2022",
+    customerName: "Rocket singh",
+    totalItems: "115",
+    orderTotal: "20",
+    orderStatus: "In transit",
+    paymentStatus: "Paid",
+  },
+  {
+    orderId: "#1236",
+    orderDate: "24/10/2022",
+    customerName: "Rocket singh",
+    totalItems: "115",
+    orderTotal: "20",
+    orderStatus: "In transit",
+    paymentStatus: "Paid",
+  },
+];
 
 export const sortConfig = [
   {

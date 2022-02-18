@@ -1,12 +1,10 @@
-import React from "react";
-import AppBar from "../../Components/AppBar/AppBar";
 import Tabs from "../../Components/Tabs/Tabs";
 import Cardblue from "../../Components/Cardblue/Cardblue";
 import { TabData } from "./TabData";
 
 function Orders() {
   return (
-    <AppBar>
+    <>
       <div className="container-fluid py-2 px-0">
         <div className="d-flex  p-0">
           <div className="p-2">
@@ -32,7 +30,7 @@ function Orders() {
       </div>
 
       <Tabs TabData={TabData} />
-    </AppBar>
+    </>
   );
 }
 

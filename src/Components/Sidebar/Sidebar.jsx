@@ -51,16 +51,16 @@ function Sidebar() {
             <ListItem
               button
               key={"Dashboard"}
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/")}
               sx={{
                 borderRadius: 2,
-                bgcolor: pathname === "/dashboard" ? "#4AA2FA" : "",
-                color: pathname === "/dashboard" ? "#fff" : "",
+                bgcolor: pathname === "/" ? "#4AA2FA" : "",
+                color: pathname === "/" ? "#fff" : "",
               }}
             >
               <ListItemIcon
                 sx={{
-                  color: pathname === "/dashboard" ? "#fff" : "black",
+                  color: pathname === "/" ? "#fff" : "black",
                 }}
               >
                 <DashboardIcon />
@@ -92,7 +92,10 @@ function Sidebar() {
                     color: pathname === "/allProducts" ? "#fff" : "",
                   }}
                 >
-                  <ListItemText primary="- All Products" />
+                  <ListItemText
+                    primary="- All Products"
+                    primaryTypographyProps={{ fontSize: "12px" }}
+                  />
                 </ListItem>
                 <ListItem
                   button
@@ -105,7 +108,10 @@ function Sidebar() {
                     color: pathname === "/categories" ? "#fff" : "",
                   }}
                 >
-                  <ListItemText primary="- categories" />
+                  <ListItemText
+                    primary="- categories"
+                    primaryTypographyProps={{ fontSize: "12px" }}
+                  />
                 </ListItem>
                 <ListItem
                   button
@@ -118,7 +124,10 @@ function Sidebar() {
                     color: pathname === "/inventory" ? "#fff" : "",
                   }}
                 >
-                  <ListItemText primary="- Inventory" />
+                  <ListItemText
+                    primary="- Inventory"
+                    primaryTypographyProps={{ fontSize: "12px" }}
+                  />
                 </ListItem>
               </List>
             </Collapse>

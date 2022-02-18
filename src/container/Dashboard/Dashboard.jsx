@@ -1,7 +1,4 @@
-import React from "react";
 import BasicDatePicker from "../../Components/BasicDatePicker/BasicDatePicker";
-import AppBar from "../../Components/AppBar/AppBar";
-
 import BasicPiechart from "../../Components/BasicPiechart/BasicPiechart";
 import BasicBarChart from "../../Components/BasicBarChart/BasicBarChart";
 import DashboardCard from "../../Components/DashboardCard/DashboardCard";
@@ -16,7 +13,7 @@ import { border } from "@mui/system";
 function Dashboard() {
   const cardData = ["sales"];
   return (
-    <AppBar>
+    <>
       <div className="container-fluid py-2 px-0">
         <div className="d-flex  p-0">
           <div className="p-2 flex-grow-1">
@@ -76,7 +73,7 @@ function Dashboard() {
           </div>
         </div>
       </div>
-    </AppBar>
+    </>
   );
 }
 
