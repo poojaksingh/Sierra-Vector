@@ -1,6 +1,12 @@
 import Table from "../../Components/Table/Table";
 import Cardblue from "../../Components/Cardblue/Cardblue";
-import { tableColumns, tableData, sortOption, filterOption } from "./TableData";
+import {
+  tableColumns,
+  tableData,
+  sortConfig,
+  filterConfig,
+  searchColumn,
+} from "./TableData";
 
 export const TabData = [
   {
@@ -11,8 +17,9 @@ export const TabData = [
     componentData: {
       tableColumns,
       tableData,
-      sortOption,
-      filterOption,
+      searchColumn,
+      sortConfig,
+      filterConfig,
     },
   },
   {

@@ -1,4 +1,9 @@
 import { fetchUsers } from "../../Services/index";
+import {
+  tableAscendingSort,
+  tableDescendingSort,
+  tableFilter,
+} from "../../Helper/TableFunctions";
 
 export const tableColumns = [
   {
@@ -18,6 +23,7 @@ export const tableColumns = [
     numeric: false,
     disablePadding: false,
     label: "Email",
+    main: true,
   },
   {
     id: "phone",
@@ -29,6 +35,38 @@ export const tableColumns = [
 
 export const tableData = fetchUsers;
 
-export const sortOption = ["Inventory (Increasing)", "Inventory (Decreasing)"];
+export const searchColumn = "name";
 
-export const filterOption = ["Active", "Draft", "Archieved"];
+export const sortConfig = [
+  {
+    sortName: "Inventory (Increasing)",
+    sortFunction: tableAscendingSort,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Inventory (Decreasing)",
+    sortFunction: tableDescendingSort,
+    sortColumn: "id",
+  },
+];
+
+export const filterConfig = [
+  {
+    filterName: "Active",
+    filterFunction: tableFilter,
+    filterColumn: "status",
+    filterValue: "",
+  },
+  {
+    filterName: "Draft",
+    filterFunction: tableFilter,
+    filterColumn: "status",
+    filterValue: "",
+  },
+  {
+    filterName: "Archieved",
+    filterFunction: tableFilter,
+    filterColumn: "status",
+    filterValue: "",
+  },
+];

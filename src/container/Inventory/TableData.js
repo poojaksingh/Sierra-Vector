@@ -6,6 +6,7 @@ export const tableColumns = [
     numeric: false,
     disablePadding: false,
     label: "ID",
+    main: true,
   },
   {
     id: "title",
@@ -29,11 +30,51 @@ export const tableColumns = [
 
 export const tableData = fetchTodos;
 
-export const sortOption = [
-  "Incoming(Ascending)",
-  "Incoming(Descending)",
-  "Availability(Ascending)",
-  "Availability(Descending)",
+export const sortConfig = [
+  {
+    sortName: "Incoming(Ascending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Incoming(Descending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Availability(Ascending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "Availability(Descending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
+  {
+    sortName: "No. Of times used (Descending)",
+    sortFunction: null,
+    sortColumn: "id",
+  },
 ];
 
-export const filterOption = ["Ascending", "Descending", "Reset"];
+export const filterConfig = [
+  {
+    filterName: "Ascending",
+    filterFunction: null,
+    filterColumn: "status",
+    filterValue: "",
+  },
+  {
+    filterName: "Descending",
+    filterFunction: null,
+    filterColumn: "status",
+    filterValue: "",
+  },
+  {
+    filterName: "Reset",
+    filterFunction: null,
+    filterColumn: "status",
+    filterValue: "",
+  },
+];

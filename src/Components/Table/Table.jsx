@@ -48,7 +48,37 @@ function EnhancedTableHead(props) {
   );
 }
 
-const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
+const EnhancedTableToolbar = ({
+  copyData,
+  sortConfig,
+  filterConfig,
+  searchColumn,
+  setFilter,
+  resetFilter,
+}) => {
+  const [search, setSearch] = useState("");
+
+  const _searchFunction = async (value) => {
+    setSearch(value);
+    let filter = copyData.filter(
+      (data) =>
+        data[searchColumn].toLowerCase().search(value.toLowerCase()) !== -1
+    );
+    setFilter(filter);
+  };
+
+  const _sortFunction = async (sortFunction, columnName) => {
+    const filter = await sortFunction(copyData, columnName);
+    setFilter([]);
+    setFilter(filter);
+  };
+
+  const _filterFunction = async (filterFunction, columnName, filterValue) => {
+    const filter = await filterFunction(copyData, columnName, filterValue);
+    console.log(filter);
+    // setFilter(filter);
+  };
+
   return (
     <Toolbar
       sx={{
@@ -66,6 +96,8 @@ const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedby="basic-addon2"
+                value={search}
+                onChange={(e) => _searchFunction(e.target.value)}
               />
               <div className="input-group-append  search_Icon">
                 <span
@@ -113,10 +145,14 @@ const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
                 </div>
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                {sortOption.map((option) => (
-                  <li key={option}>
-                    <button className="dropdown-item" type="button">
-                      {option}
+                {sortConfig.map(({ sortName, sortFunction, sortColumn }) => (
+                  <li key={sortName}>
+                    <button
+                      className="dropdown-item"
+                      type="button"
+                      onClick={() => _sortFunction(sortFunction, sortColumn)}
+                    >
+                      {sortName}
                     </button>
                   </li>
                 ))}
@@ -155,13 +191,30 @@ const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
                 </div>
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                {filterOption.map((option) => (
-                  <li key={option}>
-                    <button className="dropdown-item" type="button">
-                      {option}
-                    </button>
-                  </li>
-                ))}
+                {filterConfig.map(
+                  ({
+                    filterName,
+                    filterFunction,
+                    filterColumn,
+                    filterValue,
+                  }) => (
+                    <li key={filterName}>
+                      <button
+                        className="dropdown-item"
+                        type="button"
+                        onClick={() =>
+                          _filterFunction(
+                            filterFunction,
+                            filterColumn,
+                            filterValue
+                          )
+                        }
+                      >
+                        {filterName}
+                      </button>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -172,9 +225,12 @@ const EnhancedTableToolbar = ({ sortOption, filterOption }) => {
 };
 
 export default function EnhancedTable({ componentData }) {
-  const { tableColumns, tableData, sortOption, filterOption } = componentData;
+  const { tableColumns, tableData, sortConfig, filterConfig, searchColumn } =
+    componentData;
+  const [copyData, setCopyData] = useState([]);
   const [rows, setRows] = useState([]);
   const [columns, setColumns] = useState([]);
+  const [mainColumn, setMainColumn] = useState("");
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -184,15 +240,22 @@ export default function EnhancedTable({ componentData }) {
   }, []);
 
   const initialFunction = async () => {
-    setColumns(tableColumns);
+    await initializeColumnData();
     const { data } = await tableData();
     setRows(data);
+    setCopyData(data);
     console.log(data);
+  };
+
+  const initializeColumnData = async () => {
+    setColumns(tableColumns);
+    const data = tableColumns.filter((col) => col.main === true);
+    setMainColumn(data[0]?.id);
   };
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
+      const newSelecteds = rows.map((n) => n[mainColumn]);
       setSelected(newSelecteds);
       return;
     }
@@ -238,8 +301,12 @@ export default function EnhancedTable({ componentData }) {
     <Box sx={{ width: "100%", border: 0 }}>
       <Paper sx={{ width: "100%" }}>
         <EnhancedTableToolbar
-          sortOption={sortOption}
-          filterOption={filterOption}
+          copyData={copyData}
+          searchColumn={searchColumn}
+          sortConfig={sortConfig}
+          filterConfig={filterConfig}
+          setFilter={(data) => setRows(data)}
+          resetFilter={() => setRows(copyData)}
         />
         <TableContainer>
           <Table
@@ -257,17 +324,17 @@ export default function EnhancedTable({ componentData }) {
               {rows
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row[mainColumn]);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleClick(event, row[mainColumn])}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row[mainColumn]}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
@@ -280,7 +347,9 @@ export default function EnhancedTable({ componentData }) {
                         />
                       </TableCell>
                       {tableColumns.map((col) => (
-                        <TableCell align="left">{row[col.id]}</TableCell>
+                        <TableCell align="left">
+                          {row[col.id].toString()}
+                        </TableCell>
                       ))}
                       {/* <TableCell
                         component="th"
@@ -310,7 +379,7 @@ export default function EnhancedTable({ componentData }) {
         </TableContainer>
         <TablePagination
           sx={{
-            display: "none",
+            display: "block",
           }}
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
