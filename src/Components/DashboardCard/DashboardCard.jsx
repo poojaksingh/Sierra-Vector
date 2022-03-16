@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import GetAppIcon from "@mui/icons-material/GetApp";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import LocalOfferIcon from "@mui/icons-material/LocalOffer";
-import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
-function DashboardCard({ cardData }) {
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import { color, fontSize } from "@mui/system";
+
+function DashboardCard({ sales, Icon, amount }) {
   return (
     <div
       className="card mb-5 shadow "
@@ -29,12 +30,16 @@ function DashboardCard({ cardData }) {
             color: "#4AA2FA",
           }}
         >
-          <AttachMoneyIcon />
+          {Icon}
         </div>
-        <div>
+        <div
+          className="CurrencyNo  "
+          style={{ color: "#4AA2FA", fontSize: "20px", fontWeight: "bold" }}
+        >
           <CurrencyRupeeIcon fontSize="small" />
-          {cardData}
+          {amount}
         </div>
+        <div>{sales}</div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { border } from "@mui/system";
 
 function Dashboard() {
-  const cardData = ["sales"];
+  const cardData = ["Today sales"];
   return (
     <>
       <div className="container-fluid py-2 px-0">
@@ -41,16 +41,20 @@ function Dashboard() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard cardData={cardData} />
+            <DashboardCard
+              sales="Today Sales"
+              amount="30,00,000"
+              Icon={<LocalOfferIcon />}
+            />
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard cardData={cardData} />
+            <DashboardCard sales="Today Expenses" amount="20,00,000" />
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard cardData={cardData} />
+            <DashboardCard sales="Today Visitor" amount="5040" />
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
-            <DashboardCard cardData={cardData} />
+            <DashboardCard sales="Today Order" amount="234" />
           </div>
         </div>
       </div>
